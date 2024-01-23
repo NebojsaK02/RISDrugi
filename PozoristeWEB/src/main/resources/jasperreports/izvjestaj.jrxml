@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="izvjestaj" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7722c39f-8bb8-4108-9e76-6481b1c2f9fe">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="datum" class="java.sql.Date"/>
+	<field name="predstava.naziv" class="java.lang.String"/>
+	<field name="predstava.trajanje" class="java.lang.Integer"/>
+	<field name="scena.naziv" class="java.lang.String"/>
+	<field name="scena.idScena" class="java.lang.Integer"/>
+	<field name="idIzvodjenje" class="java.lang.Integer"/>
+	<variable name="brojIzvodjenja" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$V{idIzvodjenje}]]></variableExpression>
+	</variable>
+	<group name="Group1">
+		<groupHeader>
+			<band height="50">
+				<staticText>
+					<reportElement x="150" y="5" width="100" height="30" uuid="67722307-7392-4a9a-9bb8-fffe0c2e229d"/>
+					<text><![CDATA[Scena]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="250" y="5" width="100" height="30" uuid="c36bd24d-d130-4af8-b536-a2e1fd9f8a75"/>
+					<textFieldExpression><![CDATA[$P{scena.naziv}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="242" y="24" width="100" height="30" uuid="9c82e640-9ae7-4f1f-a380-503e59d4243a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Izvjestaj]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="21" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="123" splitType="Stretch">
+			<staticText>
+				<reportElement x="140" y="10" width="100" height="30" uuid="a2cfcc31-1332-4228-a20d-b624be6a5b93"/>
+				<text><![CDATA[Zanr]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="240" y="10" width="100" height="30" uuid="7a5a3841-bc13-4489-b4a2-3edf50888732"/>
+				<textFieldExpression><![CDATA[$P{zanr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="111" y="73" width="100" height="30" uuid="5a49f94a-3670-43dd-8c33-dc9276b73ba5"/>
+				<text><![CDATA[Datum]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="211" y="73" width="100" height="30" uuid="f3fa99ed-ddc5-4ca8-92f9-4bb9a2dfa9de"/>
+				<text><![CDATA[Naziv]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="73" width="100" height="30" uuid="164a3cb3-8395-4cc1-814f-9471d525da4e"/>
+				<text><![CDATA[Trajanje]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="63" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="10" width="100" height="30" uuid="3e1e61ff-1a8d-44c2-9105-6b2c1b457e6c"/>
+				<textFieldExpression><![CDATA[$F{datum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="10" width="100" height="30" uuid="2b6fee36-0f38-4a2e-9a39-67515eb980a8"/>
+				<textFieldExpression><![CDATA[$F{predstava.naziv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="10" width="100" height="30" uuid="0cbde405-949e-4d96-a586-fc2c7d37d0b7"/>
+				<textFieldExpression><![CDATA[$F{predstava.trajanje}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="210" y="10" width="100" height="30" uuid="64ee8c2c-ad85-4855-b072-bec1c0dd8693"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="10" width="100" height="30" uuid="b01f84ec-e477-4cc7-9905-29d5f0c8bc97"/>
+				<text><![CDATA[Ukupan broj izvestaja]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="260" y="10" width="100" height="30" uuid="025d2e7f-9971-452f-b11c-c242bc25e897"/>
+				<textFieldExpression><![CDATA[$V{brojIzvodjenja}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
